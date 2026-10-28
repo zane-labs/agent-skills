@@ -67,9 +67,12 @@ Pricing: each image costs 1 credit (standard, 2K), 2 credits (standard 4K or max
 
 Rebuilds a flat image (PNG, JPEG or WebP, up to 25 MiB) as an editable PPTX with real text boxes and shapes, or as an SVG.
 
-How it connects: `scripts/unraster.mjs` (Node.js 18+, no dependencies) uploads the local file with `UNRASTER_API_KEY`, waits for the result (PPTX can take about 2 minutes) and saves it next to the source image. An Unraster MCP server is **coming soon**; until then the plugin uses the script only.
+How it connects:
 
-Pricing: SVG costs 1 credit and PPTX 2 credits. Outputs that cannot be produced are not charged. See the [API docs](https://unraster.ai/docs/api).
+1. **MCP server**: the plugin adds the remote Unraster MCP server `https://unraster.ai/mcp` and sends `UNRASTER_API_KEY` as a Bearer token. Tools: `quote_conversion`, `convert_image`, `get_conversion`.
+2. **Script** (best for local files): `scripts/unraster.mjs` (Node.js 18+, no dependencies) uploads the local file with `UNRASTER_API_KEY`, waits for the result (PPTX can take about 2 minutes) and saves it next to the source image.
+
+Pricing: the first PowerPoint conversion on a new API account is free. After that, SVG costs 1 credit and PPTX 2 credits. Outputs that cannot be produced are not charged. See the [API docs](https://unraster.ai/docs/api).
 
 ## Privacy
 
@@ -88,7 +91,7 @@ plugins/conceptviz/
   skills/scientific-diagram/scripts/cv.mjs
 plugins/unraster/
   .claude-plugin/plugin.json
-  mcp.coming-soon.json                 MCP config to enable once the server launches
+  .mcp.json                            remote Unraster MCP server
   skills/image-to-pptx/SKILL.md
   skills/image-to-pptx/scripts/unraster.mjs
 ```

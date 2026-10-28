@@ -1,11 +1,11 @@
 {
   "name": "unraster",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Turn screenshots, infographics, charts and slide images into editable PowerPoint (PPTX) or SVG files with Unraster.",
   "author": {
     "name": "Zane"
   },
-  "homepage": "https://unraster.ai/docs/api",
+  "homepage": "https://unraster.ai/docs/agents",
   "license": "MIT",
   "keywords": [
     "pptx",

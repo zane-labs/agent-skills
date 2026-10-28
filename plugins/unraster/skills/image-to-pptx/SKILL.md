@@ -22,6 +22,7 @@ Pick the output:
 
 ## Cost and limits
 
+- The first PPTX-only conversion on a new API account is free (the quote shows `agent_trial_pptx_remaining: 1`). After that:
 - SVG = 1 credit, PPTX = 2 credits, both = 3. Only outputs that are ready to download are charged; failed or unavailable outputs are not.
 - Checking credits, checking progress and downloading are free.
 - Input: one static PNG, JPEG or WebP, up to 25 MiB and 25 million pixels.
