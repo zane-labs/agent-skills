@@ -1,0 +1,23 @@
+{
+  "name": "zane-agent-skills",
+  "description": "Agent skills for accurate scientific diagrams (ConceptViz) and image-to-editable-PowerPoint conversion (Unraster).",
+  "owner": {
+    "name": "Zane"
+  },
+  "plugins": [
+    {
+      "name": "conceptviz",
+      "source": "./plugins/conceptviz",
+      "description": "Create and revise accurate scientific and educational diagrams with ConceptViz, saved straight into your project.",
+      "category": "design",
+      "keywords": ["diagram", "science", "education", "illustration", "figure"]
+    },
+    {
+      "name": "unraster",
+      "source": "./plugins/unraster",
+      "description": "Turn screenshots, infographics, charts and slide images into editable PowerPoint (PPTX) or SVG files with Unraster.",
+      "category": "productivity",
+      "keywords": ["pptx", "powerpoint", "svg", "vectorize", "infographic"]
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "conceptviz": {
+      "type": "http",
+      "url": "https://conceptviz.app/api/mcp/mcp",
+      "headers": {
+        "Authorization": "Bearer ${CONCEPTVIZ_API_KEY}"
+      }
+    }
+  }
+}

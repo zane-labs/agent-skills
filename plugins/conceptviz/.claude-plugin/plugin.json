@@ -1,0 +1,20 @@
+{
+  "name": "conceptviz",
+  "version": "0.1.0",
+  "description": "Create and revise accurate scientific and educational diagrams with ConceptViz, saved straight into your project.",
+  "author": {
+    "name": "Zane"
+  },
+  "homepage": "https://conceptviz.app/docs/mcp",
+  "license": "MIT",
+  "keywords": [
+    "diagram",
+    "science",
+    "education",
+    "illustration",
+    "figure",
+    "mcp"
+  ],
+  "icon": "./assets/icon.png",
+  "privacyPolicyUrl": "https://conceptviz.app/privacy"
+}
