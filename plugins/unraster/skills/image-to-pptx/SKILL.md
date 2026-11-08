@@ -60,6 +60,16 @@ Rules:
 - If an upload fails because of the network or a 503, the script retries with the same idempotency key. If it still fails, retry the same command with `--idempotency-key <key>` from the error output.
 - Status `needs_review` means some outputs could not be produced reliably. Ready outputs are still downloaded and charged; unavailable ones are free. Tell the user which formats are missing.
 
+## Many images: the Batches API
+
+For more than a few images at once (for example a folder of slide images), use the Batches API instead of converting one by one. It needs a plan with batch access ($49.9/month and up, 50 or 100 files per batch); other plans get `403 plan_required`, so tell the user and fall back to converting the images one at a time with the script above.
+
+- One batch uses one output, `svg` or `pptx`. Each file is a PNG, JPEG or WebP up to 20 MiB.
+- Credits for every file are reserved when the batch is created (2 per PPTX, 1 per SVG). Tell the user the total (file count times the per-file price) and get a yes before creating the batch. Only delivered files are charged.
+- The ready-made script `scripts/batch.sh` in https://github.com/zane-labs/unraster-mcp runs the whole flow with `curl` and `jq`: create the batch with an `Idempotency-Key`, upload each file, start, poll until `finished_at` is set, then download one zip of every delivered file.
+- The zip is kept for 7 days; after that the archive returns `410 batch_expired`. A batch with no delivered files has no archive (`404`).
+- Full reference: https://unraster.ai/docs/api#batches
+
 ## Privacy
 
 Finished files are served from links that work for 7 days without an API key. Anyone holding a link can download the file. The script saves the files locally and does not print these links. Do not paste result links into public places, commits, issues or chat logs.
